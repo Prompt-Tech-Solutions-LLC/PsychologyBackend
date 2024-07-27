@@ -14,4 +14,5 @@ public class ArticleData {
     private String id;
     private String content;
     private String imageId;
+    private String mongoId;
 }

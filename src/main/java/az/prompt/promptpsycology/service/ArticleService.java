@@ -33,7 +33,8 @@ public class ArticleService {
 
             ArticleMetadataJpa articleMetadataEntity = new ArticleMetadataJpa();
             articleMetadataEntity.setTitle(articleDto.getTitle());
-            articleMetadataEntity.setMongoId(articleData.getImageId());
+            articleMetadataEntity.setImageId(articleData.getImageId());
+            articleMetadataEntity.setMongoId(articleData.getMongoId());
 
             articleRepositoryJpa.save(articleMetadataEntity);
         } catch (IOException e) {
