@@ -9,4 +9,5 @@ public class ArticleMetadataDto {
     private Long id;
     private String title;
     private String mongoId;
+    private String imageId;
 }
