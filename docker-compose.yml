@@ -1,0 +1,29 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    ports:
+      - 27017:27017
+    volumes:
+      - '${MONGODB_DATA_DB}:/data/db'
+
+  postgresql:
+    container_name: postgresql
+    image: postgres:16.1
+    environment:
+      POSTGRES_DB: "psychology"
+      POSTGRES_USER: ${SPRING_DATASOURCE_USERNAME}
+      POSTGRES_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - '${POSTGRES_DATA_DB}:/var/lib/postgresql/data'
+    restart: always

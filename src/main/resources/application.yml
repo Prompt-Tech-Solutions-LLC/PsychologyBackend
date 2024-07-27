@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Psychology
+  jpa:
+    hibernate:
+      ddl-auto: none
