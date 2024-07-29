@@ -24,7 +24,7 @@ public class QuestionJpa {
     @JoinColumn(name = "quiz_id", nullable = false)
     private QuizJpa quiz;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<AnswerJpa> answers = new ArrayList<>();
 
     public void addAnswer(AnswerJpa answer) {

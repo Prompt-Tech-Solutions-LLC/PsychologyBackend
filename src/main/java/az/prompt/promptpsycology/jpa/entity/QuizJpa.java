@@ -18,7 +18,7 @@ public class QuizJpa {
     private String title;
     private String description;
 
-    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<QuestionJpa> questions = new ArrayList<>();
 
     public void addQuestion(QuestionJpa question) {

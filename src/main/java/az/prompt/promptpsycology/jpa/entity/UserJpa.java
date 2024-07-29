@@ -2,7 +2,6 @@ package az.prompt.promptpsycology.jpa.entity;
 
 import az.prompt.promptpsycology.dto.enums.RoleEnum;
 import jakarta.persistence.*;
-import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
 
